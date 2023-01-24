@@ -1,7 +1,9 @@
 import {
+  Column,
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
@@ -22,5 +24,17 @@ export class ProductEntity {
     nullable: true,
   })
   deleteAt: Date;
+
   //Relaciones
+  @ManyToOne(() => CategoryEntity, (category) => category.product)
+  category: CategoryEntity;
+
+  @Column('varchar', {
+    name: 'title',
+    unique: true,
+    comment: 'titulo de producto',
+  })
+  title: string;
+
+
 }
