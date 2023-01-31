@@ -19,6 +19,18 @@
     "noFallthroughCasesInSwitch": false
   },
   "@ventas/entities":[
-    "./src/modules/ventas/entities"
+    "./src/modules/ventas/entities",
+  ],
+  "@ventas/dto":[
+    "./src/modules/ventas/dto",
+  ],
+  "@ventas/provaiders":[
+    "./src/modules/ventas/provaiders",
+  ],
+  "@ventas/services":[
+    "./src/modules/ventas/services",
+  ],
+  "@ventas/controllers":[
+    "./src/modules/ventas/controllers",
   ]
 }
