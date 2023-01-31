@@ -20,7 +20,6 @@ export class ProductEntity {
     type: 'timestamptz',
     default: () => 'CURRENT_TIMESTAMP',
   })
-
   createdAt: Date;
 
   @UpdateDateColumn({
@@ -28,7 +27,6 @@ export class ProductEntity {
     type: 'timestamptz',
     default: () => 'CURRENT_TIMESTAMP',
   })
-
   updateAt: Date;
 
   @DeleteDateColumn({
@@ -36,7 +34,6 @@ export class ProductEntity {
     type: 'timestamptz',
     nullable: true,
   })
-
   deleteAt: Date;
 
   //Relaciones
@@ -48,7 +45,6 @@ export class ProductEntity {
     unique: true,
     comment: 'titulo de producto',
   })
-
   title: string;
 
   @Column('number', {
@@ -56,7 +52,6 @@ export class ProductEntity {
     unique: true,
     comment: 'precio del producto con dos decimales',
   })
-
   price: number;
 
   @Column('varchar', {
@@ -64,7 +59,6 @@ export class ProductEntity {
     unique: true,
     comment: 'descripcion del producto',
   })
-
   description: string;
 
   /*@Column('boolean', {
@@ -81,14 +75,14 @@ export class ProductEntity {
   language: LanguageTypeEnum;*/
 
   @BeforeInsert()
-@BeforeUpdate()
-async setTitle(){
-    if(!this.title){
-        return;
+  @BeforeUpdate()
+  async setTitle() {
+    if (!this.title) {
+      return;
     }
     this.title = this.title.toUpperCase();
-}
-/*setEmail(){
+  }
+  /*setEmail(){
 if(!this.email){
    return;
 }
@@ -100,7 +94,4 @@ async hashPassword(){
     }
     this.password = await Bcrypt.hash(this.password, 12);
 }*/
-
 }
-
-
